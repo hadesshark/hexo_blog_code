@@ -6,5 +6,5 @@ script:
 after_success:
   - git config --global user.name "hadesshark"
   - git config --global user.email "hades_shark@hotmail.com"
-  - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+  - sed -i'' "/^ *repo/s~github\.com~${git_token}@github.com~" _config.yml
   - hexo deploy -g
