@@ -67,3 +67,16 @@ a b c
 介紹 `ls -l` 指令後的 `-l` 判斷：
 
 {% include_code ex1-1.sh lang:shell /shell/chapter1/ex1-4.sh %}
+
+
+
+上面這個指令搞不太了解 `$OPTIND` 為何不同，且而對於 `while getopts ":pq:" optname` ，雙引號中的意思不太清楚，書上有寫到：
+
+1. 第一個 `:` 忽略錯誤訊息
+2. 第二個代表選項需要一個值
+
+
+
+{% include_code ex1-1.sh lang:shell /shell/chapter1/ex1-5.sh %}
+
+介由指定解譯器，讓程式不僅僅限於 bash 。
