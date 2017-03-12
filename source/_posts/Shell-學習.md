@@ -80,3 +80,13 @@ a b c
 {% include_code ex1-1.sh lang:shell /shell/chapter1/ex1-5.sh %}
 
 介由指定解譯器，讓程式不僅僅限於 bash 。
+
+
+
+變數在設定值時，不可以空隔，下面是範例：
+
+```shell
+v1 = "abc"  # 不正確的寫法
+v1="abc"  # ok!
+```
+
