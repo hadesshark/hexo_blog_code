@@ -11,11 +11,13 @@ categories:
 
 <!--more-->
 
+<br>
+
 ## [JavaScirpt 簡介](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344991049250a2c80ec84cb4861bbd1d9b2c0c2850e000)
 
 簡單來說就是 ECMAScript == JavaScript ，而 JavaScript 因為當初設計的時間因素，產生設計缺陷。
 
-
+<br>
 
 ## [快速入門](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449917624134f5c4695b524e81a581ab5a222b05ec000)
 
@@ -23,7 +25,7 @@ categories:
 
 > 我認為最好的方法還是安裝 Node.js 。
 
-
+<br/>
 
 ### [基本語法](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143470025281435e4e03117a74438aaf98c4f7b30b307000)
 
@@ -32,6 +34,8 @@ categories:
 * 語句結尾要加 `;` ，語句塊用 `{…}`。
 * 注意大小寫。
 
+
+<br>
 
 
 ### [數據類型和變量](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499190108eec0bdf14e704a09935cd112e501e31a000)
@@ -67,7 +71,7 @@ categories:
 > * 相等比較請用 `===` ，浮點數不要用相等比較。
 > * `null` 為**空**， `undefined` 表**未定義**。
 
-
+<br>
 
 ### [字符串](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499203693072018f8878842a9b0011e3ff4e38b6b000)
 
@@ -90,7 +94,7 @@ categories:
 > * 多行字符串
 > * 字符串不可變
 
-
+<br>
 
 ### [數組](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449921138898cdeb7fc2214dc08c6c67827758cd2f000)
 
@@ -111,7 +115,7 @@ arr.join('-'); // 'A-B-C-1-2-3'
 
 > 數組由於可變，所以有很多增加、刪除、插入的方法來調用。
 
-
+<br>
 
 ### [對象（物件）](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449922400335c44d4b8c904ff29a78fd4334347131000)
 
@@ -138,19 +142,19 @@ var xiaoming = {
 
 > 這一章還沒寫到繼承，算是簡單介紹物件架構。
 
-
+<br>
 
 ### [條件判斷](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345005693811782d9e338994ec19aa1c5325824bc15000)
 
 > 主要就是 `if else` 。
 
-
+<br>
 
 ### [循環](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434500620831b2aeb535f5e245c788493e9f4ff416c0000)
 
 > 除了 for in 比較特別外，其他 `for` 、 ` while` ，其他語言都有。
 
-
+<br>
 
 ### [Map 和 Set](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345007434430758e3ac6e1b44b1865178e7aff9082e000)
 
@@ -158,7 +162,7 @@ var xiaoming = {
 
 > 比較少用的數據類型。
 
-
+<br>
 
 ### [iterable](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450082788640f82a480be8481a8ce8272951a40970000)
 
@@ -186,7 +190,7 @@ a.forEach(function (element) {
 
 > 對函數式寫法怎麼看都覺得很怪。
 
-
+<br>
 
 ## [函數](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344992519683bcfa2e33760462fb5db8eb9430924be000)
 
@@ -194,7 +198,7 @@ JavaScript 的函數可以像變量一樣使用，具有非常強大的**抽象*
 
 > 新的大章節，對函數的介紹。
 
-
+<br>
 
 ### [函數定義和調用](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449926746982f181557d9b423f819e89709feabdb4000)
 
@@ -234,6 +238,6 @@ JavaScript 允許傳入任意個參數而不影響調用。
 
 > 這章中 functional language 的原故，會覺得匿名函數很醜，所以要先了解後，再回來看才比較了解內容。
 
-
+<br>
 
 ### [變量作用域](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000)
