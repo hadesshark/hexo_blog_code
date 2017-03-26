@@ -243,3 +243,112 @@ JavaScript 允許傳入任意個參數而不影響調用。
 ### [變量作用域](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000)
 
 JavaScript 默認有一個全局對象 `window` ，全局作用域的變量實際上被綁定到 `window` 的一個屬性。
+
+
+
+ES6 引入 `let` 替代 `var` 申明一個塊級作用域的變量。
+
+過去通常用全部大寫的變量來表示常量，但 ES6 引入 `const` 來定義常量。
+
+
+
+> 這一章，要注意的就是函數裡的變量作用域問題，其他部份就和其它語言一樣。
+
+<br>
+
+
+
+### [方法](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345005399057070809cfaa347dfb7207900cfd116fb000)
+
+在物件中綁定函數（稱為方法）：
+
+```javascript
+var xiaoming = {
+  name: '小明',
+  birth: 1990,
+  age: function () {
+    var y = new Date().getFullYear();
+    return y - this.birth;
+  }
+};
+
+xiaoming.age;
+xiaoming.age();
+age(); // NaN
+var fn = xiaoming.age;
+fn(); // NaN
+```
+
+上面中最重要的就是 `this` 這個變量，它始終指向當前對象。
+
+> 我個人認為是指向調用當前對象。
+
+比較好的方法是先把它給其其變數：
+
+```javascript
+'use strict';
+
+var xiaoming = {
+  name: '小明',
+  birth: 1990,
+  age: function () {
+    var that = this;
+    function getAgeFromBirth() {
+      var y = new Date().getFullYear();
+      return y - that.birth;
+    }
+    return getAgeFromBirth();
+  }
+};
+
+xiaoming.age();
+```
+
+另外就是 `apply` ：
+
+```javascript
+function getAge() {
+  var y = new Date().getFullYear();
+  return y - this.birth;
+}
+
+var xiaoming = {
+  name: '小明',
+  birth: 1990,
+  age: getAge
+};
+
+xiaoming.age();
+getAge.apple(xiaoming, []);
+```
+
+還有就是 `call()`。
+
+
+
+> 這一章不知道在講什麼，對新手最不友善的一章。
+
+<br>
+
+### [高階函數](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499355829ead974e550644e2ebd9fd8bb1b0dd721000)
+
+JavaScript 函數都指向某個變量。即然變量可以指向函數，函數的參數能接收變量，那麼一個函數就可以收另一個函數作為參數。
+
+> 也就是函數的本質。（wik 上有）
+
+
+
+```javascript
+function add(x, y, f) {
+  return f(x) + f(y);
+}
+
+add(-5, 6, Math.abs);
+```
+
+
+
+> 簡單來說就是讓函數越來越直覺可寫。
+
+<br>
+
