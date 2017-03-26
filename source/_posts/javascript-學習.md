@@ -241,3 +241,5 @@ JavaScript 允許傳入任意個參數而不影響調用。
 <br>
 
 ### [變量作用域](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014344993159773a464f34e1724700a6d5dd9e235ceb7c000)
+
+JavaScript 默認有一個全局對象 `window` ，全局作用域的變量實際上被綁定到 `window` 的一個屬性。
