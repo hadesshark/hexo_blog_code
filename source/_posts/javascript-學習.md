@@ -352,3 +352,85 @@ add(-5, 6, Math.abs);
 
 <br>
 
+#### [map / reduce](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001435119854495d29b9b3d7028477a96ed74db95032675000)
+
+```javascript
+function pow(x) {
+  return x * x;
+}
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+arr.map(pow);
+```
+
+
+
+```javascript
+var f = function (x) {
+  return x * x;
+};
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var result = [];
+for (var i = 0; i < arr.length; i++) {
+  result.push(f(arr[i]));
+}
+```
+
+
+
+> 照我上一章所講的，高階函數更加直覺，而且把運算規則抽象化了。
+
+
+
+```javascript
+var arr = [1, 3, 5, 7, 9];
+arr.reduce(function (x, y) {
+  return x + y;
+}); // 25
+```
+
+求積的練習題參考答案：
+
+```javascript
+'use strict';
+
+function product(arr) {
+  return arr.reduce(function (x, y) { 
+    return x * y;
+  });
+}
+```
+
+
+
+> 算是很方便的函數。 python 雖然也有一樣的函數，感覺沒有那麼好用（直觀）。
+
+下面是 python 的寫法：
+
+```python
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+def fn(x):
+    return x * x
+[item for item in map(fn, a)] # [1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+<br>
+
+#### [filter](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014351219769203e3fbe1ed611475db3d439393add8997000)
+
+```javascript
+var arr = [1, 2, 4, 5, 6, 9, 10, 15];
+var r = arr.filter(function (x) {
+  return x % 2 !== 0;
+});
+r; // [1, 5, 9, 15]
+```
+
+>也是很方便的函數。
+
+<br>
+
+#### [sort](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014351226817991a9c08f1ec0a45c99b9209bcfc71b8f6000)
+
+> 一個不能亂用的函數。
+
