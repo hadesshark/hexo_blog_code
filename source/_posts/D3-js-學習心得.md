@@ -35,3 +35,7 @@ categories:
 </body>
 </html>
 ```
+
+<img src="D3-js-學習心得/first.png" height="300px" />
+
+截圖有點不方便（還要調整大小，而且要用 html 標籤）。
