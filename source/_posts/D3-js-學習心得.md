@@ -283,3 +283,133 @@ categories:
 
 這個算是很常見的圖片，程式有點長， v3 和 v4 的不同，需要修改一下。
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src="d3.min.js"></script>
+  <style>
+  rect:hover {
+    fill: orange;
+  }
+  </style>
+</head>
+<body>
+
+  <p>Chick on this text to update the chart with new data values (once).</p>
+
+  <script>
+  //Width and height
+  var w = 600;
+  var h = 250;
+
+  var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+          11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+  var xScale = d3.scaleBand()
+      .domain(d3.range(dataset.length))
+      .rangeRound([0, w])
+      .padding(0.05);
+
+  var yScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset)])
+      .range([0, h]);
+
+  //Create SVG element
+  var svg = d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+  svg.selectAll("rect")
+     .data(dataset)
+     .enter()
+     .append("rect")
+     .attr("x", function(d, i) {
+        return xScale(i);
+     })
+     .attr("y", function(d) {
+        return h - yScale(d);
+     })
+     .attr("width", xScale.bandwidth())
+     .attr("height", function(d) {
+        return yScale(d);
+     })
+     .attr("fill", function(d) {
+      return "rgb(0, 0, " + (d * 10) + ")";
+     })
+     .on("mouseover", function(d) {
+       var xPosition = parseFloat(d3.select(this).attr("x")) +
+       xScale.bandwidth() / 2;
+
+       var yPosition = parseFloat(d3.select(this).attr("y")) + 14;
+
+       svg.append("text")
+         .attr("id", "tooltip")
+         .attr("x", xPosition)
+         .attr("y", yPosition)
+         .attr("text-anchor", "middle")
+         .attr("font-family", "sans-serif")
+         .attr("font-size", "11px")
+         .attr("font-weight", "bold")
+         .attr("fill", "black")
+         .text(d);
+     })
+     .on("mouseout", function () {
+       d3.select("#tooltip").remove();
+     })
+     .on("click", function() {
+       // 點完數字應該不在原地
+       d3.select("#tooltip").remove();
+       sortBars();
+     })
+     .append("title")
+     .text(function(d) {
+       return "This value is " + d;
+     });
+
+
+  var sortOrder = false;
+
+  var sortBars = function() {
+
+    sortOrder = !sortOrder;
+
+    svg.selectAll("rect")
+      .sort(function(a, b) {
+        if (sortOrder) {
+          return d3.ascending(a, b);
+        } else {
+          return d3.descending(a, b);
+        }
+      })
+      .transition()
+      .delay(function(d, i) {
+        return i * 50;
+      })
+      .duration(1000)
+      .attr("x", function(d, i) {
+        return xScale(i);
+      });
+  };
+  </script>
+  </body>
+</html>
+```
+
+這一個又是一個直線圖，有多幾個功能：
+
+* 排序
+  * 正排序
+  * 負排序
+* 文字提示
+* 顏色提示
+
+截圖有困難，所以就不附圖了。
+
+
+
