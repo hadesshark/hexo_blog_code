@@ -36,9 +36,7 @@ after_success:
 [![Coverage Status](https://coveralls.io/repos/github/hadesshark/jenkins_test_python/badge.svg?branch=master)](https://coveralls.io/github/hadesshark/jenkins_test_python?branch=master)
 ```
 
-在 coveralls 和 travis ci 中的專案中有 markdown 可以只接下載，所以整個過程很好設定。
-
-
+在 coveralls 和 travis ci 中的專案中有 markdown 格式可以只接下載，所以整個過程很好設定。
 
 整個專案的過程是先 git push commit 之後再 travis ci build 最後 coveralls coverage。
 
