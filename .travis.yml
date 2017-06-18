@@ -2,10 +2,11 @@ language: node_js
 node_js: stable
 script:
   - npm install
-  - hexo cl
 
 after_success:
   - git config --global user.name "hadesshark"
   - git config --global user.email "hades_shark@hotmail.com"
   - sed -i'' "/^ *repo/s~github\.com~${git_token}@github.com~" _config.yml
+  - hexo cl
+  - hexo g
   - hexo deploy -g
