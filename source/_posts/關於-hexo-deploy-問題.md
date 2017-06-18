@@ -8,7 +8,9 @@ tags:
 ---
 
 目前遇到的問題就是無法用 travis ci 上傳 github 這個部份，依照不用 ci 的步驟應該是：
-（一）hexo clear
-（二）hexo g
-（三）hexo d
-（四）git commit …
+（一）`hexo clear`
+（二）`hexo g`
+（三）`hexo d`
+（四）`git commit …`
+
+在 `hexo d` 時 travis ci 還是無法成功上傳。
