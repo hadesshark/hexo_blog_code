@@ -2,11 +2,9 @@
 title: 關於 CI 的一些小小心得
 date: 2017-06-18 15:09:44
 tags:
-  - CI
   - Jenkins
   - travis ci
   - coveralls
-  - python
 ---
 
 這一篇是關於 python 專案 ci 設定問題。最開始是從《Python 項目開發實戰》中關於 Jenkins 設定開始的。在第十章中知道可以輸出報告和顯示覆蓋率報告，但我僅想了解最後的結果，簡單來說就是在 github README.md 中顯示目前專案情況，而且不想透過本機上的 jenkins ，所以改用 travis ci 和 coveralls 。
@@ -44,6 +42,6 @@ after_success:
 
 1. git push commit
 2. travis ci build
-3. coveralls coverage 
+3. coveralls coverage
 
 我比較好奇的是如何讓 coveralls 有 coverage 這個部份，因為在 2 的設定中僅是在 after_success 寫下 coveralls 這個設定就產生覆蓋率，不像 coverage.py 一樣還要 `coverage run …` 所以感覺很奇怪。
