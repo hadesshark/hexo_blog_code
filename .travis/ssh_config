@@ -1,6 +1,5 @@
 # SoarLin@github
 Host SoarLin.github.com
-	HostName github.com
 	User git
 	StrictHostKeyChecking no
 	# 底下路徑需要根據實際 Travis CI 上存取解開後的 private key 位置
