@@ -4,12 +4,19 @@ node_js:
 script:
 - npm install
 after_success:
-- git config --global user.name "hadesshark"
-- git config --global user.email "hades_shark@hotmail.com"
 - sed -i'' "/^ *repo/s~github\.com~${git_token}@github.com~" _config.yml
 - hexo cl
 - hexo g
-- hexo deploy -g
+- hexo deploy
 before_install:
 - openssl aes-256-cbc -K $encrypted_ee0b21f4d10e_key -iv $encrypted_ee0b21f4d10e_iv
   -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "hadesshark"
+- git config --global user.email "hades_shark@hotmail.com"
+
+
+- npm install -g hexo-cli
