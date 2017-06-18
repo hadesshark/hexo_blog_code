@@ -40,4 +40,4 @@ after_success:
 
 整個專案的過程是先 git push commit 之後再 travis ci build 最後 coveralls coverage。
 
-我比較好奇的是如何讓 coveralls 有 coverage 這個部份，因為在 2 的設定中僅是在 after_success 寫下 coveralls 這個設定就產生覆蓋率，不像 coverage.py 一樣還要 `coverage run …` 所以感覺很奇怪。
+我比較好奇的是如何讓 coveralls 有 coverage 這個部份，因為在設定中僅是在 after_success 寫下 coveralls 這個設定就產生覆蓋率，不像 coverage.py 一樣還要 `coverage run …` 所以感覺很奇怪。
