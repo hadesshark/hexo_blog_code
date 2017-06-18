@@ -29,7 +29,7 @@ after_success:
 
 
 
-專案是使用 `virtualenv -p python3` ，從中可以看出 `pip` 要安裝 `pytest` 、 `pytest-cov` 、`python-coveralls` ，最後要用 `pip freeze > ./requirements.txt` 就可以讓專案比較乾淨。 coveralls 我測試一段時間，才出現覆蓋率數值。在 README.rd 中只有寫下：
+專案是使用 `virtualenv -p python3` ，從中可以看出 `pip` 要安裝 `pytest` 、 `pytest-cov` 、`python-coveralls` ，最後要用 `pip freeze > ./requirements.txt` 就可以讓專案比較乾淨。 coveralls 我測試一段時間，才出現覆蓋率數值。在 README.rd 中只要寫下：
 
 ```markdown
 [![Build Status](https://travis-ci.org/hadesshark/jenkins_test_python.svg?branch=master)](https://travis-ci.org/hadesshark/jenkins_test_python)
@@ -40,4 +40,4 @@ after_success:
 
 整個專案的過程是先 git push commit 之後再 travis ci build 最後 coveralls coverage。
 
-我比較好奇的是如何讓 coveralls 有 coverage 這個部份，因為在設定中僅是在 after_success 寫下 coveralls 這個設定就產生覆蓋率，不像 coverage.py 一樣還要 `coverage run …` 所以感覺很奇怪。
+我比較好奇的是如何讓 coveralls 有 coverage 這個部份，因為在設定中僅是在 after_success 寫下 coveralls 這個設定後就產生覆蓋率，不像 coverage.py 一樣還要 `coverage run …` 所以感覺很奇怪。
