@@ -1,13 +1,15 @@
 language: node_js
 node_js:
-  - 6.10.0
+- 6.10.0
 script:
-  - npm install
-
+- npm install
 after_success:
-  - git config --global user.name "hadesshark"
-  - git config --global user.email "hades_shark@hotmail.com"
-  - sed -i'' "/^ *repo/s~github\.com~${git_token}@github.com~" _config.yml
-  - hexo cl
-  - hexo g
-  - hexo deploy -g
+- git config --global user.name "hadesshark"
+- git config --global user.email "hades_shark@hotmail.com"
+- sed -i'' "/^ *repo/s~github\.com~${git_token}@github.com~" _config.yml
+- hexo cl
+- hexo g
+- hexo deploy -g
+before_install:
+- openssl aes-256-cbc -K $encrypted_ee0b21f4d10e_key -iv $encrypted_ee0b21f4d10e_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
