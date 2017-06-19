@@ -1,13 +1,13 @@
 language: node_js
-
 node_js: stable
-
 script:
-  - npm install
-  - hexo cl
-
+- npm install
+- hexo cl
 after_success:
-  - git config --global user.name "hadesshark"
-  - git config --global user.email "hades_shark@hotmal.com"
-  - sed -i'' "/^ *repo/s~github\.com~${travis_token}@github.com~" _config.yml
-  - hexo deploy -g
+- git config --global user.name "hadesshark"
+- git config --global user.email "hades_shark@hotmal.com"
+- sed -i'' "/^ *repo/s~github\.com~${travis_token}@github.com~" _config.yml
+- hexo deploy -g
+env:
+  global:
+    secure: P6dlWcqE3S7vHYw4Cb3vn3df6Bst/vN5V79dJa6RB4OGIjHNTIWk+B/gKfJWJXdlAf1FSkSLX2TfJG9t/qAnEAaDQylKSgCQCYX75GkvAQlH0P95NOv5VeIQZiF6o1VMvDqnTaIpQh30OP8whiFFu3Mh+Y82nuPPbAJQglBZNfFkl6BPPX7qKENeZqYU6R38zhVA49dht/Y/OQleCv0T3Fb21oTEipoHH/1vZtYL4Cq/igMVjjvJwSJk1b7vzXo0NMweoiHHleqPZGeR82BMd6wqNWY6w3pwcifzRgKIeYGM8q6VjJqGFG6p9frqbxlA1ufbrWso/1Cs2wt7sGA+ovHIU6Qa7T8qcTohT1/7dHl9Wgy6wC2IwyZlhLPnhvFhsa3dfOrk5b9ik201KCtKEQ4Dk/Awoz4MqHYdpFnfPbQ4SQad+Zx4XD9XCIBEFlIMEL2tQdpPJ8j6jJd1Z7lpXPlnBMN1ATFXHP4vGmBwsjHNW/ssMC8gcyz3tAbW2Prjjt+vKY7KCIaYJ+14EYX9btSn+LK483PuskIYN3VyNWPM+9iT0xlvW+7SYD+5Dg0IziN339TcWMdyAQfXjUdaxt+1BC3aHxcxE600JGSuxQKCtB0nUtMKD1tg5SJ7civXEGuy6fF4/4PyJZmQ4R3JSGTMsBs0aySIvrp0kN6gdXQ=
