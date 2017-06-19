@@ -1,27 +1,13 @@
 language: node_js
-node_js:
-- 6.10.0
+
+node_js: stable
+
 script:
-- npm install
+  - npm install
+  - hexo cl
+
 after_success:
-- hexo cl
-- hexo g
-- hexo d
-before_install:
-# - openssl aes-256-cbc -K $encrypted_07e042bc9499_key -iv $encrypted_07e042bc9499_iv
-  -in .travis/id_rsa.enc -out ~\/.ssh/id_rsa -d
-# Set the permission of the key
-#- chmod 600 ~/.ssh/id_rsa
-# Start SSH agent
-#- eval $(ssh-agent)
-# Add the private key to the system
-#- ssh-add ~/.ssh/id_rsa
-# Copy SSH config
-#- cp .travis/ssh_config ~/.ssh/config
-# Set Git config
-- git config --global user.name "hadesshark"
-- git config --global user.email "hades_shark@hotmail.com"
-- npm install -g hexo-cli
-env:
-  global:
-    secure: gMtKyAq4QE+bXQDuXjXTshiSqBAh7QovOW+q6dt4nFPamquHlc167nkUHz5y9q/bz9Q+RJyiXY9JUxj+3LPFtWP5BU7sHkfMkbiOtvw0rjAzG+t5zxX6DrnSb9bg/h/fjdDUzgZ0+nEkcUHZuOwuY+270PW7ubBCrFTydFs86rlj2D+7x4wizfvlxZnKkDhHpJAVhHZc7IZ5RuHxIkOYwnlOqLXB2ub5gTOa6tAdDn4tKlp7g6oMW1+QLUDBRIirw1xeHUb93M8gnhElwbK3jDXlEVMywN+UxxsGkBNtMjdNsNq3bwN5GJrBAbi+169bWCVkMOop2efqI0enemTdE6Y6hLh87l96ZflAT52HfOit6OK1/YY5kgIbac7Tcc1t6NKMtZItiEXxcotc8/iLga05/D/UB71rt2L2NBT4hSzMc4h8JzVPozKKL+231P1rniewe9p/j77KwktVVv8JLeEQtpYde3e+vHHvGbvz9mHAXWvGsug6v+mmlKBeVMIY+51g5lxICiZ4L0SPTHSGFDejxRSUuw9IdJ/dUkPDT+CLIskqkJZS156/L161bSWHtgVEbv3nt7x4SeMLp2yUMPsEIdjiUYh4MHhcvHgsE4resgrBjSW+yzCXv5uqxxJXQDRs24EUyQ/8d9SaWKLmTkivhKfIrdWcfy9T5LNpj+I=
+  - git config --global user.name "hadesshark"
+  - git config --global user.email "hades_shark@hotmal.com"
+  - sed -i'' "/^ *repo/s~github\.com~${travis_token}@github.com~" _config.yml
+  - hexo deploy -g
