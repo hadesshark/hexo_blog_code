@@ -72,7 +72,7 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://travis_token@github.com/hadesshark/hadesshark.github.io.git
+  repository: https://2f86bb7360d6c341c4174509ead3a69a9cc00853@github.com/hadesshark/hadesshark.github.io.git
   branch: master
 
 # rss setting
